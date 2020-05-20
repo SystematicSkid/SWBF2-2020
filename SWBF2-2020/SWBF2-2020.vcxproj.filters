@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{571b3086-d126-4c70-9711-d8194ba7cb49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{8385341a-fa5a-4a18-b14d-cd43745a14b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes">
+      <UniqueIdentifier>{3c65266d-33fd-46c8-9f19-0350e8872200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Extra">
+      <UniqueIdentifier>{65dd9180-ba24-4771-ba59-a74058ac915f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{845b99f1-83cf-4610-ac9c-835597c01408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Hooks">
+      <UniqueIdentifier>{3d0a4139-4b14-44a4-8c58-8d3ece99d24e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Camera">
+      <UniqueIdentifier>{c2967097-dfc1-4b22-894c-ff63d423e49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Renderer">
+      <UniqueIdentifier>{5dea17b2-9fa6-4b97-abae-d028bbdc75cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Renderer\Textures">
+      <UniqueIdentifier>{58248a13-7f15-4e1e-b314-7fe81bd6ce93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Character">
+      <UniqueIdentifier>{55e13098-9e60-4aa2-871b-52bf7aac2753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Enums">
+      <UniqueIdentifier>{de7d15ff-4acd-4223-ae92-eee79d547edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Classes\Character\Entity">
+      <UniqueIdentifier>{aa7cfb6e-4fee-44e4-a8aa-6005904d5722}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Core.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Engine.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Addresses.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Extra\DirectX.h">
+      <Filter>Header Files\Engine\Classes\Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Macros.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks\Hooks.h">
+      <Filter>Header Files\Core\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks\DirectX.h">
+      <Filter>Header Files\Core\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Camera\Camera.h">
+      <Filter>Header Files\Engine\Classes\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Camera\CameraManager.h">
+      <Filter>Header Files\Engine\Classes\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\Cfg.h">
+      <Filter>Header Files\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\Renderer.h">
+      <Filter>Header Files\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\stb_image.h">
+      <Filter>Header Files\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\Ui.h">
+      <Filter>Header Files\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer\Textures\Visuals.h">
+      <Filter>Header Files\Core\Renderer\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Character.h">
+      <Filter>Header Files\Engine\Classes\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Team.h">
+      <Filter>Header Files\Engine\Classes\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Enums\Team.h">
+      <Filter>Header Files\Engine\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\CharacterManager.h">
+      <Filter>Header Files\Engine\Classes\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Enums\Relationship.h">
+      <Filter>Header Files\Engine\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldier.h">
+      <Filter>Header Files\Engine\Classes\Character\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldierClass.h">
+      <Filter>Header Files\Engine\Classes\Character\Entity</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
