@@ -9,7 +9,7 @@ namespace Core::Hooks::DirectX
 	DWORD_PTR OriginalFunction = NULL;
 
 	/* Raw callback of `DirectX->EndScene` */
-	HRESULT __stdcall NewEndScene(LPDIRECT3DDEVICE9 device)
+	HRESULT __stdcall NewEndScene(LPDIRECT3DDEVICE9 device, RECT* pSourceRect, RECT* pDestRect, HWND hDestWindowOverride, RGNDATA* pDirtyRegion)
 	{
 		//printf("Hook...\n");
 		// Call event `Hooks::DirectX->OnEndScene`
@@ -18,7 +18,7 @@ namespace Core::Hooks::DirectX
 			Hooks::DirectX::OnEndScene(device);
 		}
 		// Return original function
-		return static_cast<HRESULT(__stdcall*)(LPDIRECT3DDEVICE9)>((void*)OriginalFunction)(device);
+		return static_cast<HRESULT(__stdcall*)(LPDIRECT3DDEVICE9, RECT*, RECT*, HWND, RGNDATA*)>((void*)OriginalFunction)(device, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
 	}
 
 	void Initialize()
@@ -28,7 +28,7 @@ namespace Core::Hooks::DirectX
 		DWORD myFunc = (DWORD)NewEndScene;
 		DWORD* engineInterface = (DWORD*)*(DWORD*)pSwapChain;
 
-		if (engineInterface[42] != myFunc)
+		if (engineInterface[17] != myFunc)
 		{
 			//Allocate some memory for our copy of the interface (vtable)
 			static DWORD myEngineInterface[208 + 150];
@@ -39,8 +39,8 @@ namespace Core::Hooks::DirectX
 			memcpy(&myEngineInterface, engineInterface, sizeof(myEngineInterface));
 			*(DWORD*)pSwapChain = (DWORD)&myEngineInterface;
 			//Now apply the hook to our interface.
-			OriginalFunction = (DWORD_PTR)myEngineInterface[42];
-			myEngineInterface[42] = (DWORD)myFunc;
+			OriginalFunction = (DWORD_PTR)myEngineInterface[17];
+			myEngineInterface[17] = (DWORD)myFunc;
 		}
 
 	}

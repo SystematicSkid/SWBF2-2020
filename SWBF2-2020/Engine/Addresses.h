@@ -18,7 +18,7 @@ namespace Engine
 
 		namespace DirectX
 		{
-			DWORD CONST Instance = ModuleGame + 0x3F594C;
+			DWORD CONST Instance = *(DWORD*)(Memory::SigScan("A1 ? ? ? ? 8D 55 D8 56") + 1); // This is the ONLY address that changes on patch 1.3 -> WTF??
 
 			namespace Offsets
 			{
@@ -115,8 +115,12 @@ namespace Engine
 			{
 				DWORD CONST PlayerController	= 0x00C8;
 				DWORD CONST Character			= 0x00CC;
-				DWORD CONST Position			= 0x00DC;
+				DWORD CONST HeadPosition		= 0x00DC;
 				DWORD CONST EntityClass			= 0x0200;
+				DWORD CONST Weapons				= 0x04E0;
+				DWORD CONST SelectedWeapon		= 0x0500;
+				DWORD CONST SelectedEquipment	= 0x0501;
+				DWORD CONST FootPosition		= 0x0524;
 			}
 		}
 
@@ -147,6 +151,36 @@ namespace Engine
 			{
 				DWORD CONST PositionOffset	= 0x0044;
 				DWORD CONST Name			= 0x0050; // Hashed via FNVA1
+			}
+		}
+
+		namespace WeaponClass
+		{
+			namespace Offsets
+			{
+				DWORD CONST ClassId	= 0x001C;
+				DWORD CONST Name	= 0x0050;
+			}
+		}
+
+		namespace Weapon
+		{
+			namespace Offsets
+			{
+				DWORD CONST WeaponClass	= 0x0060;
+				DWORD CONST OwnerEntity = 0x006C;
+				DWORD CONST TimeSinceLastFire = 0x00B4;
+				DWORD CONST FireCooldown = 0x00B8;
+				DWORD CONST LastFireTime = 0x00F8;
+			}
+		}
+
+		namespace WeaponAmmo
+		{
+			namespace Offstes
+			{
+				DWORD CONST TotalAmmo = 0x000C;
+				DWORD CONST CurrentAmmoInClip = 0x0010;
 			}
 		}
 	}

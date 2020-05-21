@@ -14,6 +14,7 @@
 
 /* Macros */
 #include "../Utilities/Macros.h"
+#include "../Utilities/Memory.h"
 
 /* Addresses */
 #include "Addresses.h"
@@ -32,6 +33,10 @@
 
 /* Engine -> Character -> Collision */
 #include "./Classes/Character/Collision/CollisionBody.h"
+
+/* Engine -> Character -> Weapon */
+#include "./Classes/Character/Weapon/WeaponClass.h"
+#include "./Classes/Character/Weapon/Weapon.h"
 
 /* Engine -> Character -> Entity */
 #include "./Classes/Character/Entity/EntityClass.h"

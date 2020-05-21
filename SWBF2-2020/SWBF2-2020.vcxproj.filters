@@ -52,6 +52,9 @@
     <Filter Include="Header Files\Engine\Classes\Character\Collision">
       <UniqueIdentifier>{24c8b4b7-9c38-47e2-bbf7-99ffcc691582}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Classes\Character\Weapon">
+      <UniqueIdentifier>{77901e8e-9448-43be-b7f3-bf9da1316270}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -133,6 +136,15 @@
     </ClInclude>
     <ClInclude Include="Engine\Classes\Character\Collision\CollisionBody.h">
       <Filter>Header Files\Engine\Classes\Character\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Weapon\Weapon.h">
+      <Filter>Header Files\Engine\Classes\Character\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Weapon\WeaponClass.h">
+      <Filter>Header Files\Engine\Classes\Character\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Memory.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

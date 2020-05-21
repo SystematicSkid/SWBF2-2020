@@ -163,12 +163,15 @@
     <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldier.h" />
     <ClInclude Include="Engine\Classes\Character\Entity\EntityClass.h" />
     <ClInclude Include="Engine\Classes\Character\Team.h" />
+    <ClInclude Include="Engine\Classes\Character\Weapon\Weapon.h" />
+    <ClInclude Include="Engine\Classes\Character\Weapon\WeaponClass.h" />
     <ClInclude Include="Engine\Classes\Extra\DirectX.h" />
     <ClInclude Include="Engine\Classes\Extra\Obfuscation.h" />
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Engine\Enums\Relationship.h" />
     <ClInclude Include="Engine\Enums\Team.h" />
     <ClInclude Include="Utilities\Macros.h" />
+    <ClInclude Include="Utilities\Memory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
