@@ -23,23 +23,30 @@
 #include "./Enums/Team.h"
 
 /* Engine -> Extra */
+#include "./Classes/Extra/Obfuscation.h"
 #include "./Classes/Extra/DirectX.h"
 
 /* Engine -> Camera */
 #include "./Classes/Camera/Camera.h"
 #include "./Classes/Camera/CameraManager.h"
 
+/* Engine -> Character -> Collision */
+#include "./Classes/Character/Collision/CollisionBody.h"
+
 /* Engine -> Character -> Entity */
-#include "./Classes/Character/Entity/EntitySoldierClass.h"
+#include "./Classes/Character/Entity/EntityClass.h"
+#include "./Classes/Character/Entity/EntityBuilding.h"
 #include "./Classes/Character/Entity/EntitySoldier.h"
 
 
 /* Engine -> Character */
+#include "./Classes/Character/CommandPost.h"
 #include "./Classes/Character/Team.h"
 #include "./Classes/Character/Character.h"
 #include "./Classes/Character/CharacterManager.h"
 
 namespace Engine
 {
-	/* Add specific variables maybe? Such as LocalEnt */
+	/* Global Variables */
+	Engine::CommandPost** g_pCommandPosts = (Engine::CommandPost**)(Engine::ModuleGame + 0x3E6314);
 }

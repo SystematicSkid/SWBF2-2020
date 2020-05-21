@@ -13,7 +13,7 @@ namespace Engine
 			DEFINE_MEMBER_B_ARRAY(CHAR, Name, 64);
 			DEFINE_MEMBER_B(INT, TeamId);
 			DEFINE_MEMBER_B(Engine::Team*, Team);
-			DEFINE_MEMBER_B(Engine::EntitySoldierClass*, CharacterClass);
+			DEFINE_MEMBER_B(Engine::EntityClass*, CharacterClass);
 			DEFINE_MEMBER_B(Engine::EntitySoldier*, Entity);
 			DEFINE_MEMBER_B(INT, Pad);
 

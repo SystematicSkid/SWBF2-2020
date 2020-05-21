@@ -13,7 +13,7 @@ namespace Engine
 			DEFINE_MEMBER_B(class PlayerController*, PlayerController);
 			DEFINE_MEMBER_B(class Character*, Character);
 			DEFINE_MEMBER_B(D3DXVECTOR3, Position);
-
+			DEFINE_MEMBER_B(Engine::EntityClass*, EntityClass);
 		};
 #undef DEFINE_MEMBER_CLASS
 	public:

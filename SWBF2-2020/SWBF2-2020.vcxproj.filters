@@ -49,6 +49,9 @@
     <Filter Include="Header Files\Engine\Classes\Character\Entity">
       <UniqueIdentifier>{aa7cfb6e-4fee-44e4-a8aa-6005904d5722}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Classes\Character\Collision">
+      <UniqueIdentifier>{24c8b4b7-9c38-47e2-bbf7-99ffcc691582}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -116,8 +119,20 @@
     <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldier.h">
       <Filter>Header Files\Engine\Classes\Character\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldierClass.h">
+    <ClInclude Include="Engine\Classes\Character\Entity\EntityClass.h">
       <Filter>Header Files\Engine\Classes\Character\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Entity\EntityBuilding.h">
+      <Filter>Header Files\Engine\Classes\Character\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\CommandPost.h">
+      <Filter>Header Files\Engine\Classes\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Extra\Obfuscation.h">
+      <Filter>Header Files\Engine\Classes\Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Classes\Character\Collision\CollisionBody.h">
+      <Filter>Header Files\Engine\Classes\Character\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

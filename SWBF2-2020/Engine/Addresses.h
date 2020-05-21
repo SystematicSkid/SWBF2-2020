@@ -95,7 +95,7 @@ namespace Engine
 			}
 		}
 
-		namespace EntitySoldierClass
+		namespace EntityClass
 		{
 			namespace Offsets
 			{
@@ -104,6 +104,8 @@ namespace Engine
 				DWORD CONST ClassId			= 0x001C;
 				DWORD CONST Name			= 0x0020;
 				DWORD CONST Hitboxes		= 0x0ABC;
+				DWORD CONST MaxHealth		= 0x02E0;
+				DWORD CONST CollsionBodies	= 0x0AC4;
 			}
 		}
 
@@ -114,6 +116,37 @@ namespace Engine
 				DWORD CONST PlayerController	= 0x00C8;
 				DWORD CONST Character			= 0x00CC;
 				DWORD CONST Position			= 0x00DC;
+				DWORD CONST EntityClass			= 0x0200;
+			}
+		}
+
+		namespace CommandPost
+		{
+			namespace Offsets
+			{
+				DWORD CONST IdentityName	= 0x0020;
+				DWORD CONST LocationName	= 0x0028;
+				DWORD CONST EntityBuilding	= 0x002C;
+				DWORD CONST Position		= 0x0034;
+			}
+		}
+
+		namespace EntityBuilding
+		{
+			namespace Offsets
+			{
+				DWORD CONST EntityClass		= 0x0008;
+				DWORD CONST Position		= 0x0018;
+				DWORD CONST CollisionModel	= 0x0054;
+			}
+		}
+
+		namespace CollisionBody
+		{
+			namespace Offsets
+			{
+				DWORD CONST PositionOffset	= 0x0044;
+				DWORD CONST Name			= 0x0050; // Hashed via FNVA1
 			}
 		}
 	}

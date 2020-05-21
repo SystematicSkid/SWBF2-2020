@@ -16,7 +16,7 @@ namespace Engine
 			DEFINE_MEMBER_B(INT, NumCharacters);
 			DEFINE_MEMBER_B(class Engine::Character**, Characters);
 			DEFINE_MEMBER_B(INT, NumClasses);
-			DEFINE_MEMBER_B(Engine::EntitySoldierClass**, Classes);
+			DEFINE_MEMBER_B(Engine::EntityClass**, Classes);
 			DEFINE_MEMBER_B(Engine::Teams, TeamId);
 			DEFINE_MEMBER_B(Engine::Relationship, Relationship);
 

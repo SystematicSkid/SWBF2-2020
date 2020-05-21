@@ -157,10 +157,14 @@
     <ClInclude Include="Engine\Classes\Camera\CameraManager.h" />
     <ClInclude Include="Engine\Classes\Character\Character.h" />
     <ClInclude Include="Engine\Classes\Character\CharacterManager.h" />
+    <ClInclude Include="Engine\Classes\Character\Collision\CollisionBody.h" />
+    <ClInclude Include="Engine\Classes\Character\CommandPost.h" />
+    <ClInclude Include="Engine\Classes\Character\Entity\EntityBuilding.h" />
     <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldier.h" />
-    <ClInclude Include="Engine\Classes\Character\Entity\EntitySoldierClass.h" />
+    <ClInclude Include="Engine\Classes\Character\Entity\EntityClass.h" />
     <ClInclude Include="Engine\Classes\Character\Team.h" />
     <ClInclude Include="Engine\Classes\Extra\DirectX.h" />
+    <ClInclude Include="Engine\Classes\Extra\Obfuscation.h" />
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Engine\Enums\Relationship.h" />
     <ClInclude Include="Engine\Enums\Team.h" />
