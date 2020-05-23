@@ -59,6 +59,7 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 
 	printf("[ + ] Core initialized successfully!\n");
 
+
 	Core::Hooks::DirectX::OnEndScene = [](LPDIRECT3DDEVICE9 Device)
 	{
 		// Begin our rendering
@@ -71,9 +72,10 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 
 		// TODO: Add an in-game check
 
+		static Engine::Character* localent = nullptr;
+
 		Engine::CharacterManager* character_manager = Engine::CharacterManager::Instance;
 
-		Engine::Character* localent = character_manager->GetCharacter(0);
 		if (localent && localent->Entity)
 		{
 			Engine::Weapon* selected_weapon = localent->Entity->GetSelectedWeapon();
@@ -89,6 +91,13 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 			Engine::Character* character = character_manager->GetCharacter(i);
 			if(!character || character == localent)
 				continue;
+			if (wcsstr(character->Name, L"Based Gamer"))
+			{
+				localent = character;
+				printf("Set localplayer\n");
+				continue;
+			}
+
 			Engine::EntitySoldier* entity = character->Entity;
 			if(!entity || !character->CharacterClass)
 				continue;
@@ -102,13 +111,13 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 			std::string str(ws.begin(), ws.end());
 			if (0.00001f < head_screen.z)
 			{
-				//g.rect({ foot_screen.x, foot_screen.y, 20.f, head_screen.y - foot_screen.y }, { 255,255,255,255 }, 2.f);
-				text.draw_text(&g, { foot_screen.x, foot_screen.y - 10.f }, str.c_str(), { 255,255,255,255 }, TEXT_CENTERED);
+				g.rect({ foot_screen.x, foot_screen.y, 40.f, head_screen.y - foot_screen.y }, { 255,255,255,255 }, 2.f);
+				text.draw_text(&g, { foot_screen.x, foot_screen.y + 10.f }, str.c_str(), { 255,255,255,255 }, TEXT_CENTERED);
 				if (entity->GetSelectedWeapon() && entity->GetSelectedWeapon()->WeaponClass) // Todo: Add check for entities which aren't actual soldiers, just game objects
 				{
 					std::wstring w_weapon(entity->GetSelectedWeapon()->WeaponClass->Name);
 					std::string s_weapon(w_weapon.begin(), w_weapon.end());
-					text.draw_text(&g, { foot_screen.x, foot_screen.y - 30.f }, s_weapon.c_str(), { 255,255,255,255 }, TEXT_CENTERED | TEXT_OUTLINE);
+					text.draw_text(&g, { foot_screen.x, foot_screen.y + 30.f }, s_weapon.c_str(), { 255,255,255,255 }, TEXT_CENTERED | TEXT_OUTLINE);
 
 				}
 			}

@@ -10,7 +10,7 @@ namespace Engine
 #define DEFINE_MEMBER_CLASS Engine::Addresses::Character::Offsets
 		union
 		{
-			DEFINE_MEMBER_B_ARRAY(CHAR, Name, 64);
+			DEFINE_MEMBER_B_ARRAY(WCHAR, Name, 64);
 			DEFINE_MEMBER_B(INT, TeamId);
 			DEFINE_MEMBER_B(Engine::Team*, Team);
 			DEFINE_MEMBER_B(Engine::EntityClass*, CharacterClass);
