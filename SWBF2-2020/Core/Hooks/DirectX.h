@@ -7,6 +7,7 @@ namespace Core::Hooks::DirectX
 
 	/* Address of original functions */
 	DWORD_PTR OriginalFunction = NULL;
+	DWORD_PTR OriginalReset = NULL;
 
 	/* Raw callback of `DirectX->EndScene` */
 	HRESULT __stdcall NewEndScene(LPDIRECT3DDEVICE9 device, RECT* pSourceRect, RECT* pDestRect, HWND hDestWindowOverride, RGNDATA* pDirtyRegion)
@@ -19,6 +20,12 @@ namespace Core::Hooks::DirectX
 		}
 		// Return original function
 		return static_cast<HRESULT(__stdcall*)(LPDIRECT3DDEVICE9, RECT*, RECT*, HWND, RGNDATA*)>((void*)OriginalFunction)(device, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
+	}
+
+	HRESULT __stdcall NewReset(D3DPRESENT_PARAMETERS* pPresentationParameters)
+	{
+		renderer_on_device_lost();
+		return static_cast<HRESULT(__stdcall *)(D3DPRESENT_PARAMETERS*)>((PVOID)OriginalReset)(pPresentationParameters);
 	}
 
 	void Initialize()
@@ -41,6 +48,8 @@ namespace Core::Hooks::DirectX
 			//Now apply the hook to our interface.
 			OriginalFunction = (DWORD_PTR)myEngineInterface[17];
 			myEngineInterface[17] = (DWORD)myFunc;
+			OriginalReset = (DWORD_PTR)myEngineInterface[16];
+			myEngineInterface[16] = (DWORD)NewReset;
 		}
 
 	}

@@ -68,7 +68,7 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 		g.push_draw_cmd();
 
 		/* Watermark */
-		text.draw_text(&g, { 20, 10 }, ("SWBF2 Hook"), { 255, 255, 255, 127 });
+		text.draw_text(&g, { 20, 10 }, ("SWBF2 Hook -> Sebastien#6214"), { 255, 255, 255, 127 });
 
 		// TODO: Add an in-game check
 
@@ -91,7 +91,7 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 			Engine::Character* character = character_manager->GetCharacter(i);
 			if(!character || character == localent)
 				continue;
-			if (wcsstr(character->Name, L"Based Gamer"))
+			if (wcsstr(character->Name, L"Player 1"))
 			{
 				localent = character;
 				printf("Set localplayer\n");
@@ -100,6 +100,8 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 
 			Engine::EntitySoldier* entity = character->Entity;
 			if(!entity || !character->CharacterClass)
+				continue;
+			if(character->CharacterType == 0)
 				continue;
 			D3DXVECTOR3 head_screen = Engine::Camera::WorldToScreen(entity->HeadPosition);
 			D3DXVECTOR3 foot_screen = Engine::Camera::WorldToScreen(entity->FootPosition);
@@ -111,10 +113,15 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 			std::string str(ws.begin(), ws.end());
 			if (0.00001f < head_screen.z)
 			{
+				color rect_col = { 255,255,255,255 };
+				if (character->Team->Id == localent->Team->Id)
+					continue;
+				else
+					rect_col = { 255,0,0,255 };
 				float height = (foot_screen.y - head_screen.y);
 				float width = (height / 5.f) * 2;
-				g.rect({ foot_screen.x - (width / 2), foot_screen.y, width, -height }, { 255,255,255,255 }, 1.f);
-				text.draw_text(&g, { foot_screen.x, foot_screen.y + 10.f }, str.c_str(), { 255,255,255,255 }, TEXT_CENTERED);
+				g.rect({ foot_screen.x - (width / 2), foot_screen.y, width, -height }, rect_col, 1.f);
+				text.draw_text(&g, { foot_screen.x, foot_screen.y + 10.f }, str.c_str(), { 255,255,255,255 }, TEXT_CENTERED | TEXT_OUTLINE);
 				if (entity->GetSelectedWeapon() && entity->GetSelectedWeapon()->WeaponClass) // Todo: Add check for entities which aren't actual soldiers, just game objects
 				{
 					std::wstring w_weapon(entity->GetSelectedWeapon()->WeaponClass->Name);

@@ -47,7 +47,7 @@ namespace Engine
 
 			namespace Functions
 			{
-				DWORD CONST WorldToScreen = ModuleGame + 0x2B41D0;
+				DWORD CONST WorldToScreen = Memory::GetCallAddress("E8 ? ? ? ? F3 0F 10 4B ? 8D 45 A0");
 			}
 		}
 
@@ -77,6 +77,7 @@ namespace Engine
 			namespace Offsets
 			{
 				DWORD CONST Name			= 0x0030;
+				DWORD CONST CharacterType	= 0x0130;
 				DWORD CONST TeamId			= 0x0134;
 				DWORD CONST Team			= 0x0138;
 				DWORD CONST CharacterClass	= 0x0140;
@@ -87,7 +88,7 @@ namespace Engine
 
 		namespace CharacterManager
 		{
-			DWORD CONST Instance = ModuleGame + 0x1A30330;
+			DWORD CONST Instance = *(DWORD*)(Memory::SigScan("A1 ? ? ? ? 46 81 C7 ? ? ? ? 3B F0 7C CF") + 1);
 			namespace Offsets
 			{
 				DWORD CONST NumCharacters	= 0x0000;
