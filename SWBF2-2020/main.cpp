@@ -111,7 +111,9 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvReserved)
 			std::string str(ws.begin(), ws.end());
 			if (0.00001f < head_screen.z)
 			{
-				g.rect({ foot_screen.x, foot_screen.y, 40.f, head_screen.y - foot_screen.y }, { 255,255,255,255 }, 2.f);
+				float height = (foot_screen.y - head_screen.y);
+				float width = (height / 5.f) * 2;
+				g.rect({ foot_screen.x - (width / 2), foot_screen.y, width, -height }, { 255,255,255,255 }, 1.f);
 				text.draw_text(&g, { foot_screen.x, foot_screen.y + 10.f }, str.c_str(), { 255,255,255,255 }, TEXT_CENTERED);
 				if (entity->GetSelectedWeapon() && entity->GetSelectedWeapon()->WeaponClass) // Todo: Add check for entities which aren't actual soldiers, just game objects
 				{
